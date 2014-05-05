@@ -2,7 +2,7 @@
 ##This function will create a "special function" list that is called upon by the
 ##  cacheSolve function.  Each element of the resulting list will create conditions
 ##  needed to either create or recall a cached inverted matrix.
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(X = matrix()) {
         
         #Determines the matrix dimensions.
         Dims <- dim(X)
@@ -35,7 +35,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## This function will return the inverted matrix using the "special matrix" list
 ##  output from "makeCacheMatrix" function.  If the inverted matrix does not previously
 ##  exist, then the function will use the built-in "solve" function to invert the matrix.
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(X, ...) {
         #Gets the stored square matrix that is inverted.
         SqMat <- X$getInverse()
         #Tests to determine if the stored matrix is empty or not empty.  If not empty,
